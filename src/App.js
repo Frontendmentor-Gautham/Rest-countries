@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import ListCountries from "./Components/ListCountries";
 import moonDarkTheme from "./images/moon-dark-theme.svg";
 import moonLightTheme from "./images/moon-light.svg";
 // import searchLight from "./images/search-light.png";
@@ -78,6 +79,8 @@ function App() {
           <option value="Oceania">Oceania</option>
         </select>
       </div>
+
+      <ListCountries theme={theme} />
     </>
   );
 }
