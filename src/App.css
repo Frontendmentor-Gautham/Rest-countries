@@ -12,3 +12,56 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
+.light {
+  background-color: hsl(0, 0%, 98%);
+}
+
+.dark {
+  background-color: hsl(207, 26%, 17%);
+}
+
+.dark-text {
+  color: hsl(0, 0%, 100%);
+}
+
+.light-text {
+  color: hsl(200, 15%, 8%);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  padding: 0px 70px;
+}
+
+.dark-navbar {
+  background-color: hsl(209, 23%, 22%);
+}
+
+.light-navbar {
+  background-color: hsl(0, 0%, 100%);
+}
+
+.theme-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-right: 50px;
+}
+
+.theme-container img {
+  height: 40px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.light-dark-image {
+  display: none;
+}
+
+.dark-light-image {
+  display: none;
+}
