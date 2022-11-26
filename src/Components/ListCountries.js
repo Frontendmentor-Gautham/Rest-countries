@@ -9,7 +9,10 @@ const ListCountries = ({ theme }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("https://restcountries.com/v2/all")
+    const abortController = new AbortController();
+    fetch("https://restcountries.com/v2/all", {
+      signal: abortController.signal,
+    })
       .then((res) => res.json())
       .then(
         (result) => {
@@ -22,6 +25,10 @@ const ListCountries = ({ theme }) => {
           setError(error);
         }
       );
+
+    return () => {
+      abortController.abort();
+    };
   }, []);
 
   if (error) {

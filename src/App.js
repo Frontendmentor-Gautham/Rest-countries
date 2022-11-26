@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import ListCountries from "./Components/ListCountries";
+import SearchFields from "./Components/SearchFields";
 import moonDarkTheme from "./images/moon-dark-theme.svg";
 import moonLightTheme from "./images/moon-light.svg";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import DetailComponent from "./Components/DetailComponent";
 // import searchLight from "./images/search-light.png";
 // import searchDark from "./images/search-dark.png";
 
@@ -33,54 +36,44 @@ function App() {
   return (
     <>
       {/* Header part */}
-      <nav className={`${theme}-navbar navbar`}>
-        <div>
-          <h1 className={`${theme}-text`}>Where in the world?</h1>
-        </div>
+      <Router>
+        <nav className={`${theme}-navbar navbar`}>
+          <div>
+            <h1 className={`${theme}-text`}>Where in the world?</h1>
+          </div>
 
-        <div className="theme-container">
-          <img
-            onClick={changeTheme}
-            className={`${theme}-dark-image`}
-            src={moonDarkTheme}
-            alt="Dark theme moon"
-          />
-          <img
-            onClick={changeTheme}
-            className={`${theme}-light-image`}
-            src={moonLightTheme}
-            alt="Dark theme moon"
-          />
-          <h4 className={`${theme}-text`}>Dark Mode</h4>
-        </div>
-      </nav>
+          <div className="theme-container">
+            <img
+              onClick={changeTheme}
+              className={`${theme}-dark-image`}
+              src={moonDarkTheme}
+              alt="Dark theme moon"
+            />
+            <img
+              onClick={changeTheme}
+              className={`${theme}-light-image`}
+              src={moonLightTheme}
+              alt="Dark theme moon"
+            />
+            <h4 className={`${theme}-text`}>Dark Mode</h4>
+          </div>
+        </nav>
 
-      {/* body part-search input and card componenet */}
-      <div className="input-fields">
-        <input
-          className={`${theme}-input-text`}
-          type="text"
-          name="search-input"
-          id="search-input"
-          placeholder="Search for a country"
-        />
+        {/* body part-search input and card componenet */}
 
-        <select
-          className={`${theme}-region-option`}
-          name="region"
-          id="region-search"
-          placeholder="Filter by region"
-        >
-          <option value="Filter by region">Filter by region</option>
-          <option value="Africa">Africa</option>
-          <option value="America">America</option>
-          <option value="Asia">Asia</option>
-          <option value="Europe">Europe</option>
-          <option value="Oceania">Oceania</option>
-        </select>
-      </div>
+        <Switch>
+          <Route exact path="/">
+            <SearchFields theme={theme} />
 
-      <ListCountries theme={theme} />
+            <ListCountries theme={theme} />
+          </Route>
+
+          <Route path="/name/:name">
+            <DetailComponent />
+          </Route>
+          <Route> This is 404 page</Route>
+        </Switch>
+      </Router>
     </>
   );
 }
