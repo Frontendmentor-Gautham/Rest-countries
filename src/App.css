@@ -14,7 +14,7 @@ body {
 }
 
 .light {
-  background-color: hsl(0, 0%, 98%);
+  background-color: hsl(0, 0%, 100%);
 }
 
 .dark {
@@ -42,7 +42,7 @@ body {
 }
 
 .light-navbar {
-  background-color: hsl(0, 0%, 100%);
+  background-color: hsl(0, 0%, 98%);
 }
 
 .theme-container {
@@ -64,4 +64,54 @@ body {
 
 .dark-light-image {
   display: none;
+}
+
+.input-fields {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 70px;
+}
+
+.input-fields input {
+  width: 450px;
+  padding: 10px;
+  border: none;
+}
+
+.dark-input-text {
+  background-color: hsl(209, 23%, 22%);
+  color: hsl(0, 0%, 100%);
+}
+
+.light-input-text {
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(200, 15%, 8%);
+}
+
+#region-search {
+  padding-right: 50px;
+  margin-right: 40px;
+  width: 300px;
+  padding: 10px;
+  border: none;
+  padding-left: 20px;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+#region-search option {
+  border: none;
+  font-weight: 600;
+}
+
+.dark-region-option {
+  background-color: hsl(209, 23%, 22%);
+  color: hsl(0, 0%, 100%);
+}
+
+.light-region-option {
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(200, 15%, 8%);
 }
