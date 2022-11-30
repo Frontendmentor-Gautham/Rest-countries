@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./DetailCard.css";
 
 const DetailCard = ({ item }) => {
@@ -14,7 +15,9 @@ const DetailCard = ({ item }) => {
 
   return (
     <>
-      <button className="back-button">Back</button>
+      <Link to="/">
+        <button className="back-button">Back</button>
+      </Link>
 
       <div className="flex">
         <div className="img-wrapper">

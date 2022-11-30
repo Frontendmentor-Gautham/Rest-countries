@@ -43,3 +43,36 @@ li {
 li span {
   font-weight: 600;
 }
+
+@media screen and (max-width: 768px) {
+  .back-button {
+    margin-left: 80px;
+  }
+  .img-wrapper {
+    align-self: center;
+  }
+
+  .country-image {
+    width: 400px;
+  }
+
+  .flex {
+    flex-direction: column;
+  }
+
+  .info-list {
+    flex-direction: column;
+  }
+
+  .country-info {
+    margin-top: 20px;
+  }
+
+  .country-info h1 {
+    margin-left: 4px;
+  }
+
+  .right-info {
+    margin-top: 30px;
+  }
+}
