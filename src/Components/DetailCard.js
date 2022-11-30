@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { appTheme } from "../App";
 import "./DetailCard.css";
 
 const DetailCard = ({ item }) => {
+  const AppTheme = useContext(appTheme);
   const languages = [];
   function languagesFunc(items) {
-    console.log(items);
     items.map((ele) => {
-      console.log(ele.name);
       languages.push(" " + ele.name);
       return ele.name;
     });
@@ -16,7 +16,7 @@ const DetailCard = ({ item }) => {
   return (
     <>
       <Link to="/">
-        <button className="back-button">Back</button>
+        <button className={`${AppTheme.theme}-btn back-button`}>Back</button>
       </Link>
 
       <div className="flex">
@@ -28,7 +28,7 @@ const DetailCard = ({ item }) => {
           />
         </div>
 
-        <div className="country-info">
+        <div className={`${AppTheme.theme}-info country-info`}>
           <h1>{item.name}</h1>
           <div className="info-list">
             <ul className="left-info">

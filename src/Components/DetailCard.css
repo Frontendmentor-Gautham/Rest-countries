@@ -1,12 +1,16 @@
 .back-button {
-  color: #fff;
   font-weight: 600;
-  background-color: hsl(209, 23%, 22%);
   padding: 10px;
   width: 150px;
   border: none;
-  box-shadow: 0px 0px 10px hsl(209, 23%, 22%);
   cursor: pointer;
+  box-shadow: 0px 0px 10px hsl(209, 23%, 22%);
+  transition: 1s all;
+}
+
+.dark-btn {
+  color: #fff;
+  background-color: hsl(209, 23%, 22%);
 }
 
 .flex {
@@ -25,6 +29,15 @@
 .country-info {
   margin-left: 100px;
   margin-top: -80px;
+  transition: 1s all;
+}
+
+.dark-info {
+  color: #fff;
+}
+
+.light-info {
+  color: #000;
 }
 
 .info-list {

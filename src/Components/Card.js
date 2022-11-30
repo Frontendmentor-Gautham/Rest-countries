@@ -24,7 +24,7 @@ const Card = ({ item, theme }) => {
             </li>
           </ol>
 
-          <Link to={{ pathname: `/name/${item.name}` }}>
+          <Link to={{ pathname: `/name/${item.name}`, state: { theme } }}>
             <p className={`${theme}-read read-more`}>Read More...</p>
           </Link>
         </div>

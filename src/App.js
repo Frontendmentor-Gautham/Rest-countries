@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import ListCountries from "./Components/ListCountries";
 import SearchFields from "./Components/SearchFields";
@@ -9,8 +9,14 @@ import DetailComponent from "./Components/DetailComponent";
 // import searchLight from "./images/search-light.png";
 // import searchDark from "./images/search-dark.png";
 
+export const appTheme = React.createContext();
+
 function App() {
   const [theme, setTheme] = useState("dark");
+
+  const themeProvider = {
+    theme,
+  };
 
   const changeTheme = () => {
     if (theme === "light") {
@@ -68,7 +74,11 @@ function App() {
             <ListCountries theme={theme} />
           </Route>
 
-          <Route path="/name/:name" component={DetailComponent}></Route>
+          <appTheme.Provider value={themeProvider}>
+            <Route path="/name/:name" component={DetailComponent}></Route>
+          </appTheme.Provider>
+
+          {/* <appTheme.Provider value={themeProvider} /> */}
           <Route> This is 404 page</Route>
         </Switch>
       </Router>
