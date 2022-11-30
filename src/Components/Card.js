@@ -1,5 +1,6 @@
 import React from "react";
 import "./Card.scss";
+import { Link } from "react-router-dom";
 
 const Card = ({ item, theme }) => {
   return (
@@ -10,6 +11,7 @@ const Card = ({ item, theme }) => {
         </div>
         <div className="card-content">
           <h2 className={`${theme}-card-name`}>{item.name}</h2>
+          <Link to={{ pathname: `/name/${item.name}` }}></Link>
           <ol className={`card-list ${theme}-card-list`}>
             <li>
               population: <span>{item.population}</span>
@@ -21,6 +23,10 @@ const Card = ({ item, theme }) => {
               Capital: <span>{item.capital}</span>
             </li>
           </ol>
+
+          <Link to={{ pathname: `/name/${item.name}` }}>
+            <p className={`${theme}-read read-more`}>Read More...</p>
+          </Link>
         </div>
       </article>
     </>

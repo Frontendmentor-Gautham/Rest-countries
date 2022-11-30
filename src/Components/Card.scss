@@ -15,7 +15,6 @@
   width: 275px;
   padding: 0px;
   transition: all 0.3s;
-  cursor: pointer;
 
   &:hover {
     transform: scale(1.1);
@@ -84,6 +83,25 @@
 
 .light-card-list {
   color: #000;
+}
+
+.read-more {
+  text-align: right;
+  margin-right: 5px;
+  text-decoration: underline;
+}
+
+.dark-read {
+  color: #fff;
+}
+
+.light-read {
+  color: #000;
+}
+
+.read-more:hover {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {

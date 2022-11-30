@@ -68,9 +68,7 @@ function App() {
             <ListCountries theme={theme} />
           </Route>
 
-          <Route path="/name/:name">
-            <DetailComponent />
-          </Route>
+          <Route path="/name/:name" component={DetailComponent}></Route>
           <Route> This is 404 page</Route>
         </Switch>
       </Router>
