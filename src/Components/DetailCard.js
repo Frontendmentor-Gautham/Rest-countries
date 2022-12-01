@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { appTheme } from "../App";
 import "./DetailCard.css";
@@ -6,6 +6,7 @@ import "./DetailCard.css";
 const DetailCard = ({ item }) => {
   const AppTheme = useContext(appTheme);
   const languages = [];
+  const [borders,setBorders] = useState([]);
   function languagesFunc(items) {
     items.map((ele) => {
       languages.push(" " + ele.name);
@@ -62,6 +63,18 @@ const DetailCard = ({ item }) => {
               </li>
             </ul>
           </div>
+
+          <div className="border-countries-info">
+            <span>Border Countries: </span>
+            <ul className="border-countries">
+            {
+              item.borders.map((border) => (
+                <li><button className={`${AppTheme.theme}-btn btn`}>{border}</button></li>
+              ))
+            }
+            </ul>
+          </div>
+
         </div>
       </div>
     </>

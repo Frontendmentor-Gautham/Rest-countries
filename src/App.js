@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import ListCountries from "./Components/ListCountries";
-import SearchFields from "./Components/SearchFields";
 import moonDarkTheme from "./images/moon-dark-theme.svg";
 import moonLightTheme from "./images/moon-light.svg";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

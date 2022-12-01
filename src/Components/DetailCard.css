@@ -57,6 +57,24 @@ li span {
   font-weight: 600;
 }
 
+.border-countries-info{
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+.border-countries{
+  display: flex;
+  flex-direction: row;
+  margin-left: -2px;
+  margin-top: 10px;
+}
+
+.btn{
+  width: 70px;
+  padding: 10px;
+  border: none;
+}
+
 @media screen and (max-width: 768px) {
   .back-button {
     margin-left: 80px;
