@@ -69,8 +69,6 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-            <SearchFields theme={theme} />
-
             <ListCountries theme={theme} />
           </Route>
 
