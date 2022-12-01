@@ -7,6 +7,9 @@ const ListCountries = ({ theme }) => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
+  const [searchApiData, setSearchApiData] = useState([]);
+
+  const [SearchVal, setSearchVal] = useState("");
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -17,8 +20,8 @@ const ListCountries = ({ theme }) => {
       .then(
         (result) => {
           setIsLoaded(true);
-          console.log(result);
           setItems(result);
+          setSearchApiData(result);
         },
         (error) => {
           setIsLoaded(true);
@@ -31,6 +34,18 @@ const ListCountries = ({ theme }) => {
     };
   }, []);
 
+  const searchValue = (e) => {
+    if (e.target.value == "") {
+      setItems(searchApiData);
+    } else {
+      const filteredResult = searchApiData.filter((item) =>
+        item.name.toLowerCase().includes(e.target.value.toLowerCase())
+      );
+      setItems(filteredResult);
+    }
+    setSearchVal(e.target.value);
+  };
+
   if (error) {
     return <>{error.message}</>;
   } else if (!isLoaded) {
@@ -38,6 +53,19 @@ const ListCountries = ({ theme }) => {
   } else {
     return (
       <div className="wrapper">
+        <div className="search-wrapper">
+          <label htmlFor="search-form">
+            <input
+              type="search"
+              name="search-form"
+              id="search-form"
+              className="search-input"
+              placeholder="Search for..."
+              value={SearchVal}
+              onInput={(e) => searchValue(e)}
+            />
+          </label>
+        </div>
         <ul className="card-grid">
           {items.map((item) => (
             <li>
